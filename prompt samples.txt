@@ -1,0 +1,10 @@
+Read sql-anti-pattern.txt file and use the rules there for identiying SQL query anti-pattern.
+
+Read all .sql files under source-code directory and list anti-pattern behavior you found. 
+List each finding with the line number of the query/code within the file.
+Suggest to me remediation plan with priority based on criticality.
+Create the report as a Markdown file named sql-anti-pattern-report.md
+
+Review the rules on sql-anti-pattern.txt file and improve the rules based on your knowledge. 
+Create the new rules with Markdown format onto a new file named rules-sql-anti-pattern.md.
+
