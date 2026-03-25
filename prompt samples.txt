@@ -1,10 +1,25 @@
-Read sql-anti-pattern.txt file and use the rules there for identiying SQL query anti-pattern.
+Kiro Sample Prompt:
 
-Read all .sql files under source-code directory and list anti-pattern behavior you found. 
-List each finding with the line number of the query/code within the file.
-Suggest to me remediation plan with priority based on criticality.
-Create the report as a Markdown file named sql-anti-pattern-report.md
+Load anti-pattern file as detection rule;
 
-Review the rules on sql-anti-pattern.txt file and improve the rules based on your knowledge. 
-Create the new rules with Markdown format onto a new file named rules-sql-anti-pattern.md.
+"Read sql-anti-pattern.txt file and use the rules there for identifying SQL query anti-pattern."
+
+Analyze SQL codes based on the loaded rules:
+
+"Read all .sql files under source-code directory and list anti-pattern behavior you found. 
+List each finding with the line number of the query/code within the file."
+
+Ask Kiro to suggest an action plan for fixing the issues (based on issue criticality and projected man-days):
+
+"Suggest to me remediation plan with priority based on criticality."
+
+Ask Kiro to create a report, in this case on md format:
+
+"Create the report as a Markdown file named sql-anti-pattern-report.md"
+
+Report in HTML or CSV format is also possible and useful for project management purpose.
+
+Asking Kiro to update anti-pattern rules document based on latest knowledge:
+
+"Review the rules on sql-anti-pattern.txt file and improve the rules based on your knowledge.Create the new rules with Markdown format onto a new file named rules-sql-anti-pattern.md."
 
