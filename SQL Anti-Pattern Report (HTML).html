@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en"><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc;
+  --color-text: #131920;
+  --color-navbar-bg: #f9f9fb;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #fff;
+  --color-bg-tertiary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+  --color-surface: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-active: #e5e7eb;
+  --color-border: #0000001f;
+  --color-border-light: #0000000f;
+  --color-border-strong: #d1d5db;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --block-hover-outline: 1px dashed color-mix(in srgb, #4200db 50%, transparent);
+  --block-selected-outline: 1px solid #8575ff;
+  --block-selection-outline-offset: 2px;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #4200db 40%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #fff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #e8e6ff;
+  --color-user-bubble: #f3f3f7;
+  --color-user-bubble-text: #131920;
+  --color-text-secondary: #5e5e5e;
+  --color-text-tertiary: #656871;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #fff;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f5eb;
+  --color-success-border: #b3d9bf;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fceaea;
+  --color-error-border: #f2cccc;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #fff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f9dfa3;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #ebf3fc;
+  --color-info-border: #b3d1f0;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #fff;
+  --color-overlay: #00000080;
+  --color-shadow: #00000014;
+  --color-hover: #0000000d;
+  --color-tooltip-bg: #000000d9;
+  --color-tooltip-text: #fff;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: #4200db66;
+  --color-voice-red-glow: #db000066;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px #0000000d;
+  --shadow-md: 0 4px 12px #00000014;
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #10b981;
+  --color-teal: #4ecdc4;
+  --color-code-bg: #f3f3f7;
+  --color-code-header-bg: #f1f3f5;
+  --color-code-text: #24292e;
+  --color-code-border: #e1e4e8;
+  --color-code-muted: #6a737d;
+  --color-inline-code-bg: #f3f3f7;
+  --color-inline-code-text: #24292e;
+  --color-inline-code-border: #e1e4e8;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #333;
+  --color-graph-node-text-dim: #7f8c8d;
+  --color-graph-edge-default: #95a5a6;
+  --color-graph-edge-cross: #e67e22;
+  --color-graph-edge-text: #666;
+  --color-graph-edge-stroke: #fff;
+  --color-graph-highlight-bg: #ff6b6b;
+  --color-graph-highlight-border: #e74c3c;
+  --color-graph-search-bg: gold;
+  --color-graph-search-border: orange;
+  --color-graph-focus-border: #c0392b;
+  --color-graph-external-border: #95a5a6;
+  --color-graph-cat-file: #3498db;
+  --color-graph-cat-folder: #7f8c8d;
+  --color-graph-cat-file-aggregate: #2980b9;
+  --color-graph-cat-class: #9b59b6;
+  --color-graph-cat-function: #2ecc71;
+  --color-graph-cat-method: #1abc9c;
+  --color-graph-cat-variable: #f39c12;
+  --color-graph-cat-import: #d35400;
+  --color-graph-cat-module: #5b6abf;
+  --color-graph-cat-concept: #e74c3c;
+  --color-graph-cat-person: #ff6b6b;
+  --color-graph-cat-org: #4ecdc4;
+  --color-graph-cat-organization: #4ecdc4;
+  --color-graph-cat-product: #a29bfe;
+  --color-graph-cat-metric: #fd79a8;
+  --color-graph-cat-location: #34495e;
+  --color-graph-cat-date: #e056a0;
+  --color-graph-cat-code: #3498db;
+  --color-graph-cat-doc: #7f8c8d;
+  --color-graph-cat-url: #00b894;
+  --color-graph-cat-email: #6c5ce7;
+  --color-graph-cat-unknown: #bdc3c7;
+  --color-graph-rel-contains: #bdc3c7;
+  --color-graph-rel-extends: #9b59b6;
+  --color-graph-rel-implements: #3498db;
+  --color-graph-rel-imports: #e67e22;
+  --color-graph-rel-uses: #2ecc71;
+  --color-graph-rel-calls: #27ae60;
+  --color-graph-rel-references: #f39c12;
+  --color-graph-rel-related-to: #95a5a6;
+  --color-graph-rel-works-on: #e74c3c;
+  --color-graph-rel-owns: #1abc9c;
+  --color-graph-rel-depends-on: #e67e22;
+  --color-graph-rel-parent-of: #bdc3c7;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #9ca3af;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #f9fafb;
+  --qs-tertiary-background: #f9fafb;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  --safe-left: 0px;
+  --safe-right: 0px;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: #b400aa;
+  --highlight-selected-bg-color: #006400;
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQL Anti-Pattern Report</title>
+<script src="https://cdn.jsdelivr.net/npm/highcharts@12.1.2/highcharts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highcharts@12.1.2/modules/accessibility.js"></script>
+<style>
+:root{
+  --color-bg:#f7f8fa; --color-surface:#ffffff; --color-surface-2:#f4f5f7;
+  --color-text:#172b4d; --color-text-secondary:#44546f; --color-text-muted:#8993a4;
+  --color-border:#dfe1e6; --color-border-light:#ebecf0;
+  --color-primary:#0052CC;
+  --crit:#de350b; --crit-bg:#ffebe6;
+  --high:#ff5630; --high-bg:#fff0ed;
+  --med:#ff991f; --med-bg:#fffae6;
+  --low:#36b37e; --low-bg:#e3fcef;
+  --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --font-mono:'SF Mono',Consolas,'Courier New',monospace;
+  --radius:10px; --radius-sm:6px;
+}
+*{box-sizing:border-box;}
+body{background:var(--color-bg);font-family:var(--font-sans);color:var(--color-text);
+  margin:0;padding:32px;line-height:1.55;}
+.wrap{max-width:1100px;margin:0 auto;}
+h1{font-size:26px;margin:0 0 4px;}
+.sub{color:var(--color-text-muted);font-size:13px;margin-bottom:4px;}
+.note{background:var(--med-bg);border-left:4px solid var(--med);padding:10px 14px;
+  border-radius:var(--radius-sm);font-size:13px;color:var(--color-text-secondary);margin:16px 0 28px;}
+h2{font-size:18px;margin:34px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--color-border);}
+h3{font-size:14px;margin:22px 0 10px;color:var(--color-text-secondary);font-family:var(--font-mono);}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:8px;}
+.kpi{background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:16px;}
+.kpi .label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-muted);}
+.kpi .val{font-size:26px;font-weight:700;font-family:var(--font-mono);margin-top:4px;}
+.sev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0;}
+.sev{border-radius:var(--radius);padding:14px;text-align:center;border:1px solid var(--color-border-light);}
+.sev .n{font-size:30px;font-weight:700;font-family:var(--font-mono);line-height:1;}
+.sev .t{font-size:12px;text-transform:uppercase;letter-spacing:.04em;margin-top:6px;font-weight:600;}
+.sev.c{background:var(--crit-bg);}.sev.c .n,.sev.c .t{color:var(--crit);}
+.sev.h{background:var(--high-bg);}.sev.h .n,.sev.h .t{color:var(--high);}
+.sev.m{background:var(--med-bg);}.sev.m .n,.sev.m .t{color:#b06f00;}
+.sev.l{background:var(--low-bg);}.sev.l .n,.sev.l .t{color:#006644;}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start;}
+.card{background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:18px;}
+ol.risks{margin:0;padding-left:18px;}ol.risks li{margin-bottom:10px;font-size:13.5px;}
+#sevchart{height:260px;}
+table{width:100%;border-collapse:collapse;font-size:12.5px;background:var(--color-surface);
+  border:1px solid var(--color-border-light);border-radius:var(--radius);overflow:hidden;margin-bottom:8px;}
+th{text-align:left;background:var(--color-surface-2);color:var(--color-text-secondary);
+  font-weight:600;padding:9px 11px;border-bottom:1px solid var(--color-border);font-size:11px;
+  text-transform:uppercase;letter-spacing:.03em;}
+td{padding:9px 11px;border-bottom:1px solid var(--color-border-light);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--color-surface-2);}
+code{font-family:var(--font-mono);font-size:11.5px;background:var(--color-surface-2);
+  padding:1px 5px;border-radius:4px;color:#344563;white-space:nowrap;}
+.loc{font-family:var(--font-mono);color:var(--color-text-muted);white-space:nowrap;}
+.rid{font-family:var(--font-mono);font-weight:600;color:var(--color-primary);white-space:nowrap;}
+.badge{display:inline-block;padding:2px 8px;border-radius:100px;font-size:10.5px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;}
+.badge.c{background:var(--crit-bg);color:var(--crit);}
+.badge.h{background:var(--high-bg);color:var(--high);}
+.badge.m{background:var(--med-bg);color:#b06f00;}
+.badge.l{background:var(--low-bg);color:#006644;}
+.conf{font-size:11px;color:var(--color-text-muted);}
+.plan{border-left:4px solid var(--color-primary);background:var(--color-surface);
+  border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:12px;}
+.plan .ptag{font-family:var(--font-mono);font-weight:700;color:var(--color-primary);font-size:13px;}
+.plan .eff{float:right;font-family:var(--font-mono);font-size:12px;color:var(--color-text-muted);}
+.plan p{margin:6px 0 0;font-size:13px;color:var(--color-text-secondary);}
+.appendix{font-size:13px;color:var(--color-text-secondary);}
+.appendix b{color:var(--color-text);}
+.footer{margin-top:30px;font-size:11.5px;color:var(--color-text-muted);text-align:center;}
+@media(max-width:820px){.layout{grid-template-columns:1fr;}.sev-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>SQL Anti-Pattern Report</h1>
+  <div class="sub">Repository: syuaip/sqlantipattern &nbsp;·&nbsp; Analysis date: 2026-11-24 &nbsp;·&nbsp; Mode: read-only static analysis</div>
+  <div class="note"><b>Sample output</b> from the improved Kiro playbook run against the repo's own fixtures
+    (<code>bad-query-samples.sql</code>, <code>Schema.sql</code>). Both files are deliberately-flawed test
+    fixtures, so a low health score is expected and confirms the detector fires on the seeded patterns.</div>
+
+  <h2>1. Executive Summary</h2>
+  <div class="kpis">
+    <div class="kpi"><div class="label">Files analyzed</div><div class="val">2</div></div>
+    <div class="kpi"><div class="label">Dialect</div><div class="val" style="font-size:18px;">SQL Server</div></div>
+    <div class="kpi"><div class="label">Total findings</div><div class="val">26</div></div>
+    <div class="kpi"><div class="label">Est. effort</div><div class="val" style="font-size:18px;">6.5–11 days</div></div>
+    <div class="kpi"><div class="label">Health score</div><div class="val">48<span style="font-size:14px;color:var(--color-text-muted);">/100</span></div></div>
+  </div>
+  <div class="sev-grid">
+    <div class="sev c"><div class="n">2</div><div class="t">Critical</div></div>
+    <div class="sev h"><div class="n">10</div><div class="t">High</div></div>
+    <div class="sev m"><div class="n">10</div><div class="t">Medium</div></div>
+    <div class="sev l"><div class="n">4</div><div class="t">Low</div></div>
+  </div>
+
+  <div class="layout">
+    <div class="card">
+      <h3 style="margin-top:0;">Top 3 Risks</h3>
+      <ol class="risks">
+        <li><b>Dynamic SQL + cursor + per-iteration scans</b> (<code>bad-query-samples.sql</code>) — a Critical performance/security cluster: an RBAR cursor wrapping a <code>SELECT *</code> dynamic string, with non-SARGable predicates re-run every loop.</li>
+        <li><b>Pervasive over-use of NVARCHAR</b> across every table in <code>Schema.sql</code> — doubles storage on ASCII-only columns (email, phone, codes, status).</li>
+        <li><b>Hidden business logic in triggers</b> plus a nullable self-referencing FK — maintainability and referential-integrity risks.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Findings by Severity</h3>
+      <div id="sevchart"></div>
+    </div>
+  </div>
+
+  <h2>2. Scope &amp; Dialect Inventory</h2>
+  <table>
+    <thead><tr><th>File</th><th>Dialect</th><th>Lines</th><th>Object types found</th></tr></thead>
+    <tbody>
+      <tr><td><code>bad-query-samples.sql</code></td><td>SQL Server</td><td class="loc">69</td><td>Batch: dynamic SQL, cursor, WHILE loop, 2 SELECTs</td></tr>
+      <tr><td><code>Schema.sql</code></td><td>SQL Server</td><td class="loc">809</td><td>8 tables, 2 procs, 2 views, 1 index, 2 triggers</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12.5px;color:var(--color-text-muted);">Oracle / MySQL / PostgreSQL / MongoDB rules were loaded but not applicable (no such source present).</p>
+
+  <h2>3. Findings</h2>
+  <h3>3.1 &nbsp;bad-query-samples.sql</h3>
+  <table>
+    <thead><tr><th>Line(s)</th><th>Rule</th><th>Severity</th><th>Snippet</th><th>Why / Fix</th></tr></thead>
+    <tbody>
+      <tr><td class="loc">3–5,13</td><td><span class="rid">E1/C18</span><br>Dynamic SQL</td><td><span class="badge h">High</span><div class="conf">High</div></td><td><code>SET @DynamicSQL = '...'</code></td><td>Injection surface + no plan reuse. → static SQL / typed <code>sp_executesql</code>.</td></tr>
+      <tr><td class="loc">5</td><td><span class="rid">C2</span><br>SELECT *</td><td><span class="badge h">High</span><div class="conf">High</div></td><td><code>SELECT * FROM Sales.Orders</code></td><td>Blind projection; extra I/O; breaks on schema change. → list columns.</td></tr>
+      <tr><td class="loc">11–69</td><td><span class="rid">C41</span><br>CURSOR / RBAR</td><td><span class="badge c">Critical</span><div class="conf">High</div></td><td><code>DECLARE OrderCursor CURSOR FOR</code></td><td>Row-by-row instead of set-based. → rewrite as JOIN/set query.</td></tr>
+      <tr><td class="loc">11–13</td><td><span class="rid">syntax</span><br>Invalid cursor body</td><td><span class="badge h">High</span><div class="conf">Medium</div></td><td><code>CURSOR FOR … EXEC sp_executesql</code></td><td>Cursor <code>FOR</code> needs a SELECT, not EXEC — batch won't compile. → point at a real SELECT or drop the cursor.</td></tr>
+      <tr><td class="loc">27–63</td><td><span class="rid">C32</span><br>SELECT inside WHILE</td><td><span class="badge h">High</span><div class="conf">High</div></td><td><code>WHILE @@FETCH_STATUS=0 … SELECT</code></td><td>Query re-executed each iteration. → move out of loop.</td></tr>
+      <tr><td class="loc">41</td><td><span class="rid">C1/C28</span><br>Function on column</td><td><span class="badge c">Critical</span><div class="conf">High</div></td><td><code>WHERE dbo.CalculateTax(TotalAmount) &gt; 100</code></td><td>Non-SARGable UDF per row → full scan. → pre-compute; filter raw indexed column.</td></tr>
+      <tr><td class="loc">43</td><td><span class="rid">C7</span><br>NOT IN subquery</td><td><span class="badge h">High</span><div class="conf">High</div></td><td><code>ProductID NOT IN (SELECT …)</code></td><td>Zero rows if any NULL; poor plan. → <code>NOT EXISTS</code> / anti-join.</td></tr>
+      <tr><td class="loc">55</td><td><span class="rid">C21</span><br>Negative predicate</td><td><span class="badge m">Medium</span><div class="conf">High</div></td><td><code>WHERE RegionCode &lt;&gt; 'US'</code></td><td>Non-SARGable. → positive/range predicate.</td></tr>
+      <tr><td class="loc">57</td><td><span class="rid">C31</span><br>Leading wildcard</td><td><span class="badge h">High</span><div class="conf">High</div></td><td><code>LIKE '%@gmail.com'</code></td><td>Leading % forces scan. → trailing wildcard / computed column / full-text.</td></tr>
+      <tr><td class="loc">37</td><td><span class="rid">C2</span><br>Implicit scan</td><td><span class="badge m">Medium</span><div class="conf">Medium</div></td><td><code>SELECT TotalAmount FROM Sales.OrderDetails</code></td><td>Effectively scans. → add SARGable predicate.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.2 &nbsp;Schema.sql</h3>
+  <table>
+    <thead><tr><th>Line(s)</th><th>Rule</th><th>Severity</th><th>Snippet</th><th>Why / Fix</th></tr></thead>
+    <tbody>
+      <tr><td class="loc">227–267,685</td><td><span class="rid">B6/B7</span><br>Missing indexes</td><td><span class="badge c">Critical</span><div class="conf">High</div></td><td>no index on <code>OrderItems.OrderID/ProductID</code>, <code>ProductReviews.ProductID</code></td><td>FK/join/search cols unindexed → scans (needed index is commented out at L685). → add nonclustered indexes.</td></tr>
+      <tr><td class="loc">89–263</td><td><span class="rid">A2</span><br>Over-use of NVARCHAR</td><td><span class="badge m">Medium</span><div class="conf">High</div></td><td><code>Email NVARCHAR(100)</code>, <code>Status NVARCHAR(50)</code></td><td>ASCII-only stored at 2×. → VARCHAR unless Unicode needed (schema migration).</td></tr>
+      <tr><td class="loc">113–115</td><td><span class="rid">B4</span><br>Nullable FK</td><td><span class="badge h">High</span><div class="conf">High</div></td><td><code>ParentCategoryID INT NULL REFERENCES Categories</code></td><td>Nullable self-FK weakens integrity. → keep only if "root = NULL" intended; document.</td></tr>
+      <tr><td class="loc">157,183–255</td><td><span class="rid">B13</span><br>FK not NOT NULL</td><td><span class="badge h">High</span><div class="conf">Medium</div></td><td><code>CustomerID INT,</code> (Orders)</td><td>Nullable FK allows orphan rows. → add NOT NULL unless optional.</td></tr>
+      <tr><td class="loc">707</td><td><span class="rid">C2</span><br>SELECT * in proc</td><td><span class="badge h">High</span><div class="conf">High</div></td><td><code>SELECT o.*, (subq),(subq)</code></td><td>SELECT * + 2 correlated subqueries/row. → explicit cols + single JOIN/aggregate.</td></tr>
+      <tr><td class="loc">709–711</td><td><span class="rid">C27</span><br>Correlated subqueries</td><td><span class="badge m">Medium</span><div class="conf">High</div></td><td><code>(SELECT COUNT(*) FROM OrderItems oi WHERE oi.OrderID=o.OrderID)</code></td><td>Per-row subqueries O(n×m). → one <code>GROUP BY</code> join.</td></tr>
+      <tr><td class="loc">737–807</td><td><span class="rid">B8</span><br>Logic in triggers</td><td><span class="badge h">High</span><div class="conf">High</div></td><td><code>CREATE TRIGGER trg_DecreaseStockOnPurchase</code></td><td>Hidden side-effects; hard to test. → move to explicit procedures.</td></tr>
+      <tr><td class="loc">737–753</td><td><span class="rid">I2</span><br>Trigger multi-row bug</td><td><span class="badge h">High</span><div class="conf">Medium</div></td><td><code>UPDATE … JOIN inserted i</code></td><td>Multi-row inserts to same product not aggregated. → aggregate <code>inserted</code> by ProductID first.</td></tr>
+      <tr><td class="loc">301</td><td><span class="rid">C25</span><br>DELETE w/o WHERE</td><td><span class="badge h">High</span><div class="conf">High</div></td><td><code>DELETE FROM Categories;</code></td><td>Deletes all rows. → scope WHERE / intentional TRUNCATE.</td></tr>
+      <tr><td class="loc">279</td><td><span class="rid">D/26</span><br>sp_ prefix</td><td><span class="badge m">Medium</span><div class="conf">High</div></td><td><code>CREATE PROCEDURE sp_GenerateECommerceDemoData</code></td><td>sp_ reserved → master lookup + ambiguity. → rename <code>usp_</code>.</td></tr>
+      <tr><td class="loc">549–655</td><td><span class="rid">B17/C2</span><br>Wide heavy view</td><td><span class="badge m">Medium</span><div class="conf">High</div></td><td><code>vw_HeavyOrderView</code> (30+ cols, 4 LEFT JOINs, no filter)</td><td>Blind projection at view layer. → narrow cols; push predicates; materialize.</td></tr>
+      <tr><td class="loc">313–503</td><td><span class="rid">C32/C41</span><br>Row-by-row WHILE</td><td><span class="badge m">Medium</span><div class="conf">High</div></td><td><code>WHILE @i &lt;= @CustomerCount … INSERT</code></td><td>Procedural loops not set-based. → tally/set-based insert.</td></tr>
+      <tr><td class="loc">129,237</td><td><span class="rid">A4</span><br>NVARCHAR(MAX)</td><td><span class="badge m">Medium</span><div class="conf">Medium</div></td><td><code>Description NVARCHAR(MAX)</code></td><td>Off-row, unindexable. → OK for free text; review only.</td></tr>
+      <tr><td class="loc">99,139</td><td><span class="rid">A3</span><br>Single BIT</td><td><span class="badge l">Low</span><div class="conf">High</div></td><td><code>IsActive BIT DEFAULT 1</code></td><td>Singleton BIT uses a byte. → acceptable / TINYINT; low priority.</td></tr>
+      <tr><td class="loc">371,401,431</td><td><span class="rid">order</span><br>TOP 1 ORDER BY NEWID()</td><td><span class="badge l">Low</span><div class="conf">Medium</div></td><td><code>SELECT TOP 1 … ORDER BY NEWID()</code></td><td>Full random sort per iteration. → fine for seed data; avoid at scale.</td></tr>
+      <tr><td class="loc">525–541</td><td><span class="rid">C31v</span><br>View w/o filter</td><td><span class="badge l">Low</span><div class="conf">Medium</div></td><td><code>vw_EfficientOrderSummary</code></td><td>No WHERE; relies on caller. → document intended usage.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Remediation Plan &nbsp;<span style="font-size:12px;font-weight:400;color:var(--color-text-muted);">(Severity × Effort)</span></h2>
+  <div class="plan"><span class="ptag">P1 — Quick wins</span><span class="eff">S–M · 0.5–2d</span>
+    <p>C1 UDF-in-predicate, C7 NOT IN, C31 leading wildcard, C2 SELECT * (L5/L707), sp_ rename, DELETE-without-WHERE guard. High ROI, low risk.</p></div>
+  <div class="plan"><span class="ptag">P2 — Structural performance</span><span class="eff">M · 1–2d</span>
+    <p>B6/B7 add missing FK/search indexes; author the commented-out <code>IX_ProductReviews_ProductID</code> (L685).</p></div>
+  <div class="plan"><span class="ptag">P3 — Rewrite RBAR</span><span class="eff">M–L · 2–3d</span>
+    <p>C41 cursor + C32 WHILE → set-based; fix the invalid cursor body (L11–13).</p></div>
+  <div class="plan"><span class="ptag">P4 — Schema hardening</span><span class="eff">M–L · 2–4d</span>
+    <p>B13 FK NOT NULL; B4 document nullable self-FK; A2 NVARCHAR→VARCHAR sweep (migration); B8/I2 triggers → procedures + multi-row fix; B17 narrow heavy view.</p></div>
+  <div class="plan"><span class="ptag">P5 — Polish</span><span class="eff">S · &lt;0.5d</span>
+    <p>A3 single BIT, random-order seed queries, view filtering docs.</p></div>
+  <p style="font-size:13px;color:var(--color-text-secondary);"><b>Total: ~6.5–11 man-days.</b> Sprint 1 = P1 + P2 (safe, high ROI); Sprint 2 = P3 + P4 (needs testing / migration window); P5 opportunistic.</p>
+
+  <h2>5. Appendix</h2>
+  <div class="appendix">
+    <p><b>Rules not applicable (dialect mismatch):</b> A8–A9, B11, G7 (Postgres); A10, A14, B18 (MySQL); B5, C20, G8 (Oracle); all MongoDB rules (G9–G10).</p>
+    <p><b>Intentional / acceptable patterns (not flagged):</b> <code>Rating INT CHECK (1–5)</code> (good; satisfies B15); <code>vw_EfficientOrderSummary</code> explicit columns; <code>SET NOCOUNT ON</code> present (satisfies C33); DECIMAL used for all money columns (satisfies A11).</p>
+    <p><b>Confidence legend:</b> High = unambiguous match · Medium = context-dependent · Low = heuristic/minor.</p>
+    <p><b>Machine-readable companion:</b> <code>sql-anti-pattern-findings.csv</code> (one row per finding).</p>
+  </div>
+
+  <div class="footer">Generated as a sample by the improved SQL anti-pattern detection playbook · syuaip/sqlantipattern · 2026-11-24</div>
+</div>
+
+<script>
+Highcharts.chart('sevchart',{
+  chart:{type:'bar',backgroundColor:'transparent',spacing:[6,6,6,6]},
+  title:{text:null},credits:{enabled:false},legend:{enabled:false},
+  xAxis:{categories:['Critical','High','Medium','Low'],lineColor:'#dfe1e6',
+    labels:{style:{color:'#44546f',fontWeight:'600',fontSize:'12px'}}},
+  yAxis:{title:{text:null},gridLineColor:'#ebecf0',allowDecimals:false,
+    labels:{style:{color:'#8993a4'}}},
+  tooltip:{pointFormat:'<b>{point.y}</b> findings'},
+  plotOptions:{bar:{borderRadius:4,dataLabels:{enabled:true,style:{fontWeight:'700',color:'#172b4d'}}}},
+  series:[{name:'Findings',data:[
+    {y:2,color:'#de350b'},{y:10,color:'#ff5630'},{y:10,color:'#ff991f'},{y:4,color:'#36b37e'}
+  ]}]
+});
+</script>
+
+
+</body></html>
